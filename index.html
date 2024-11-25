@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find your Music Taste</title>
+    <style>
+        #menubar ul li {
+            display: inline-block;
+            list-style-type: none;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        #menubar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        #menubar ul li a:hover {
+            color: black
+        }
+
+        #menubar {
+            background: rgba(153, 81, 21, 0.661);
+            padding: 5px 10px;
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-top: 10px;
+        }
+
+        #menubar ul {
+            margin: 0;
+            padding: 0;
+            width: 567px;
+        }
+
+        #title {
+            font-family: "Times New Roman", Serif;
+            padding: 0px 520px;
+        }
+
+        #name {
+            position: fixed;
+            right: 0px;
+        }
+
+        #title img {
+            border-radius: 0px 20px 40px 60px;
+        }
+
+        #loginblank {
+            width: 250px;
+            margin-left: 1050px;
+        }
+
+        #sendletter {
+            background-color: rgba(153, 81, 21, 0.661);
+            border-style: solid;
+            border-color: rgb(171, 70, 11);
+            background-position: center;
+
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-top: 100px;
+            margin-bottom: 50px;
+
+            padding-left: 10px;
+            height: 600px;
+
+        }
+
+        #luckymusic {
+            background-color: rgba(240, 248, 255, 0.74);
+            border-style: solid;
+            border-color: rgb(54, 24, 7);
+            background-position: center;
+            margin-top: 80px;
+            margin-bottom: 50px;
+            margin-left: 50px;
+            margin-right: 50px;
+            height: 400px;
+
+        }
+
+        #daymusic {
+            background-color: rgba(240, 248, 255, 0.74);
+            border-style: solid;
+            border-color: rgb(54, 24, 7);
+            background-position: center;
+            margin-top: 80px;
+            margin-bottom: 50px;
+            margin-left: 50px;
+            margin-right: 50px;
+            height: 400px;
+
+        }
+
+        #readletter {
+            background-color: rgba(240, 248, 255, 0.74);
+            border-style: solid;
+            border-color: rgb(54, 24, 7);
+            background-position: center;
+            margin-top: 80px;
+            margin-bottom: 50px;
+            margin-left: 50px;
+            margin-right: 50px;
+            height: 400px;
+
+        }
+
+        #info {
+            background-color: rgba(240, 248, 255, 0.74);
+            border-style: solid;
+            border-color: rgb(54, 24, 7);
+            background-position: center;
+            margin-top: 80px;
+            margin-bottom: 50px;
+            margin-left: 50px;
+            margin-right: 50px;
+            height: 400px;
+
+        }
+
+        #howto {
+            background-color: rgba(240, 248, 255, 0.74);
+            border-style: solid;
+            border-color: rgb(54, 24, 7);
+            background-position: center;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            margin-left: 50px;
+            margin-right: 50px;
+            height: 200px;
+
+        }
+
+        #foot {
+            background-color: rgba(240, 248, 255, 0.74);
+            border-style: solid;
+            border-color: rgb(54, 24, 7);
+            background-position: center;
+            margin-top: 80px;
+            margin-bottom: 50px;
+            margin-left: 50px;
+            margin-right: 50px;
+            height: 100px;
+
+        }
+
+    
+    </style>
+</head>
+
+<body>
+    <div id="name">
+        202403600 임지현
+    </div>
+    <header>
+        <div id="title">
+            <h1>Find your Music Taste</h1>
+            <img src="headphone-1868615_1280.jpg" alt="헤드폰 이미지" width="420px" height="320px">
+        </div>
+    </header>
+    <nav>
+        <div id="menubar">
+            <ul>
+                <li><a href="#dearuser">Dear user</a></li>
+                <li><a href="#randommusic">Random Music</a></li>
+                <li><a href="#weeklymusic">Weekly Music</a></li>
+                <li><a href="#fromuser">From user</a></li>
+                <li><a href="#mypage">My page</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <div id="login">
+            <fieldset id="loginblank">
+                <legend>
+                    <h4>LOGIN</h4>
+                </legend>
+                <form method="get">
+                    ID: <input type="text" id="id" size="12" value=""> <br>
+                    PASSWORD: <input type="password" id="password" size="12" value=""> <br> <br>
+                    <input type="submit" onclick="welcome()" value="SUBMIT">
+                </form>
+            </fieldset>
+        </div>
+        <script>
+            function welcome() {
+                let a = document.getElementById("id").value;
+                let b = document.getElementById("password").value;
+                if (a.length < 7 || b.length < 6) {
+                    alert("아이디는 7글자, 비밀번호는 6글자 이상이어야 합니다.");
+                }
+
+                else {
+                    alert("환영합니다");
+                    // 창 없애기 기능
+                }
+            }
+        </script>
+    </section>
+
+    <section>
+        <div id="howto">
+            <h1>사이트 이용 방법 안내</h1>
+        </div>
+    </section>
+
+    <script>
+        function getTextAreaValue() {
+            let s;
+            s = document.getElementById("texts").value;
+            document.getElementById("result1").value = s;
+        }
+
+    </script>
+
+    <section>
+
+
+
+        <div id="sendletter">
+            <a id="dearuser">
+                <h1>Dear User</h1>
+            </a><br>
+            <textarea id="texts" cols="50" rows="20">Record your memory about the music</textarea>
+            <input type="button" onclick="getTextAreaValue();" value="submit">
+
+        </div>
+
+    </section>
+
+    <section>
+        <div id="luckymusic">
+            <a id="randommusic">Random Music</a><br>
+        </div>
+    </section>
+
+    <section>
+        <div id="daymusic">
+            <a id="weeklymusic"> Weekly Music</a><br>
+            <p>
+                이번 주의 추천 음악은 다음과 같습니다 <br>
+                <a href="https://youtu.be/wqN1vLPX-no?feature=shared">태연 Letter To Myself</a> <br>
+            </p>
+            Dear user. <br>
+
+            겨울이 오는 게 체감되는 요즘입니다. <br>
+            지금 날씨에 딱 맞는 분위기를 가진 곡을 하나 소개해드리려고 합니다. <br>
+            Letter To Myself는 서정적인 가사와 폭발적인 멜로디가 어우러져 힘 있는 위로를 전달하는 곡입니다. <br>
+            제게는 '널 잃지 않았으면 해'라는 가사가 특히 인상 깊었는데요.<br>
+            우리는 여러 이유로 하고자 하는 일이나 사소한 의견마저 저버리게 됩니다. <br>
+            하지만 자신이 얼마나 가치 있는 존재인지 잊지 않으면 좋겠습니다.<br>
+            이 노래와 함께 시린 겨울이 아닌 따뜻한 겨울을 보내시길 바랍니다.<br>
+            <p>Sincerely, <br>
+                Find your Music Taste
+            </p>
+
+
+
+        </div>
+
+    </section>
+
+    <section>
+        <div id="readletter">
+            <a id="fromuser">From user</a><br>
+        </div>
+
+
+    </section>
+
+    <section>
+        <div id="info">
+            <a id="mypage">My page</a><br>
+            <textarea id="result1" cols="50" rows="20"></textarea>
+        </div>
+    </section>
+
+    <footer>
+        <div id="foot">
+            건의사항/문의하기 <br>
+            일부 하이퍼링크는 유튜브로 연결됩니다.
+        </div>
+    </footer>
+
+</body>
+
+</html>
