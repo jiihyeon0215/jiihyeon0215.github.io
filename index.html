@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find your Music Taste</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="name">
+        202403600 임지현
+        <br>
+        <a href="#title"><input type="button" value="home" style="color: rgb(128, 53, 24);"></a>
+    </div>
+    <header>
+        <div id="title">
+            <h1>Find your Music Taste</h1>
+            <img src="headphone-1868615_1280.jpg" alt="헤드폰 이미지" width="420px" height="320px">
+        </div>
+    </header>
+    <nav>
+        <div id="menubar">
+            <ul>
+                <li><a href="#dearuser">Dear user</a></li>
+                <li><a href="#randommusic">Random Music</a></li>
+                <li><a href="#weeklymusic">Weekly Music</a></li>
+                <li><a href="#fromuser">From user</a></li>
+                <li><a href="#mypage">My page</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <div id="login">
+            <fieldset id="loginblank">
+                <legend>
+                    <h4>LOGIN</h4>
+                </legend>
+                <form method="get">
+                    ID: <input type="text" id="id" size="12" value=""> <br>
+                    PASSWORD: <input type="password" id="password" size="12" value=""> <br> <br>
+                    <input type="submit" onclick="welcome()" value="SUBMIT">
+                </form>
+            </fieldset>
+        </div>
+        <script>
+            function welcome() {
+                let a = document.getElementById("id").value;
+                let b = document.getElementById("password").value;
+                if (a.length < 7 || b.length < 6) {
+                    alert("아이디는 7글자, 비밀번호는 6글자 이상이어야 합니다.");
+                }
+
+                else {
+                    alert("환영합니다");
+                    document.getElementById('login').innerHTML = "";
+                }
+            }
+        </script>
+    </section>
+
+    <!-- 컨텐츠 -->
+    <section>
+        <div id="howto">
+            <h1>사이트 이용 방법 안내</h1>
+            <hr>
+            <details>
+                <summary style="color: rgb(77, 70, 154);"> Click! </summary>
+                <p>이 사이트는 노래와 관련된 자신의 생각을 <span style="color: brown;">편지 형식</span>으로 공유할 수 있는 공간을 제공합니다. <br>
+                <p><strong>Dear user</strong>을 클릭하면, 자신의 음악 감상문을 자유롭게 작성할 수 있고, 이는 <strong>My page</strong>에 저장됩니다 <br>
+                    <strong>Random Music</strong>에서는 오늘 하루를 함께할 노래를 랜덤으로 뽑을 수 있습니다. <br>
+                    <strong>Weekly Music</strong>은 사이트에서 제공하는 금주의 음악으로, 매주 업데이트 됩니다. <br>
+                    <strong>From user</strong>에서는 다른 사용자들이 적은 편지와 추천한 노래를 감상할 수 있습니다. <br>
+                    마지막으로, 언제든 <span style="color: rgb(90, 176, 246);">home</span> 버튼을 통해서 바로 메인 화면으로 이동할 수 있습니다. <br>
+                    자신의 감정과 경험을 생생하게 기록하고, 공유한다면 더욱 의미있는 음악 감상이 가능할 것입니다. <br>
+                </p>
+                </p>
+            </details>
+        </div>
+    </section>
+
+    <script>
+        function getTextAreaValue(button) {
+            if (button.value == "submit") {
+                let s;
+                s = document.getElementById("texts").value;
+                document.getElementById("result1").value = s;
+                button.value = "re-submit";
+            }
+            else {
+                let t;
+                t = document.getElementById("texts").value;
+                document.getElementById("result2").value = t;
+                button.value = "submit";
+            }
+        }
+
+    </script>
+
+    <section>
+
+        <div id="sendletter">
+            <a id="dearuser">
+                <h1>Dear user</h1>
+            </a>
+            <hr><br>
+            <textarea id="texts" cols="50" rows="20">Record your memory about the music</textarea>
+            <input type="button" onclick="getTextAreaValue(this);" value="submit">
+            <a href="#mypage"><input type="button" value="my page" style="color:rgb(71, 136, 189);"></a>
+        </div>
+
+    </section>
+
+    <section class="block">
+
+        <div id="luckymusic">
+            <h1><a id="randommusic">Random Music</a><br></h1>
+            <hr>
+            <p id="whichmusic" style="text-align: center; margin-top:30px; font-size: 22px;">오늘 들을 음악을 <span
+                    style="color: rgb(156, 81, 15);">운명</span>에 맡겨보세요. <br><br>
+                <img src="악보.jpg" alt="악보" width="400px" height="300px" style="margin-left: 120px;">
+                <input type="button" value="Click!" onclick="MusicDestiny()"
+                    style="margin-left: 40px; height: 40px; font-size: 25px; color: rgb(96, 43, 13);">
+            </p>
+            <script>
+                function MusicDestiny() {
+                    let f = Math.random() * 3
+                    let n = Math.floor(f);
+                    document.getElementById('whichmusic').innerHTML = '<img src="' + n + '.png" alt="이미지" style="width: 450px; height: 450px; margin-left: 160px; margin-right: 120px; margin-top: 10px;">' +
+                        '<input type="button" value="click" onclick="MusicDestiny()">';
+
+                }
+            </script>
+        </div>
+
+
+    </section>
+
+    <section class="block">
+
+        <div id="daymusic">
+            <h1><a id="weeklymusic">Weekly Music</a></h1>
+            <hr><br>
+            <p>
+                <img src="태연.jpeg" alt="Letter To Myself 앨범 태연의 사진"
+                    style="width: 370px; height: 470px; float: left; margin-right: 50px;">
+                <strong>추천 곡:</strong> <a href="https://www.youtube.com/watch?v=OyBO0nLrrq0"
+                    style="color: rgb(12, 74, 137);">태연 - Letter To Myself</a> <br>
+            <p style="background-color: rgb(158, 210, 255); line-height: 40px;"><span style=" font-weight: 600;">Dear
+                    user</span> <br>
+
+                눈도 오고 날씨가 추워진 요즘입니다. <br>
+                저는 이런 날씨에는 특히 집에 있는 걸 좋아합니다. <br>
+                이번 주엔 요새 날씨처럼 시원하다 못해 차가운 노래를 추천하려고 합니다. <br>
+                <span style="color: rgb(116, 51, 11); font-weight: 800;">Letter To Myself</span>는 서정적인 가사와 폭발적인 멜로디가
+                어우러져 힘 있는 위로를 전달하는 곡입니다. <br>
+                태연 노래를 좋아해서 여름에는 weekend를 즐겨 듣곤 했는데, 겨울에 어울리는 곡도 찾아 기분이 좋았습니다. <br>
+                가사에선 '널 잃지 않았으면 해'가 특히 인상 깊었는데요.<br>
+                여러 상황에서 우리는 하고자 하는 일이나 사소한 의견마저도 버리게 되는 것 같습니다.<br>
+                하지만 각자가 얼마나 가치 있는 사람인지 잊지 않고, 몸도 마음도 따뜻한 겨울을 보내시길 바랍니다.<br>
+                <span style=" font-weight: 600; ">Sincerely, <br>
+                    Find your Music Taste</span>
+            </p>
+        </div>
+
+    </section>
+
+    <section class="block">
+
+        <div id="readletter">
+            <h1><a id="fromuser">From user</a></h1>
+            <hr>
+            <h5 style="font-size: 20px; text-align: center;"><span style="color: brown;">다른 사용자</span>가 작성한 편지를 읽어보세요.
+            </h5>
+            <iframe src="iframe1.html" width="600px" height="350px"
+                style="margin-top: 20px; margin-left: 10px; background-color: rgb(255, 255, 255); border-color: rgb(52, 107, 173); border-radius: 20px; margin-right: 30px;"></iframe>
+            <iframe src="iframe2.html" width="600px" height="350px"
+                style="margin-top: 20px; background-color:rgba(27, 35, 101, 0.764); border-color: rgb(42, 156, 176); border-radius: 20px;"></iframe>
+        </div>
+
+
+    </section>
+
+    <section class="block">
+
+        <div id="info">
+            <h1><a id="mypage">My page</a></h1>
+            <hr><br>
+            <textarea id="result1" cols="45" rows="18"></textarea>
+            <textarea id="result2" cols="45" rows="18"></textarea>
+            <p style="text-align: center; font-weight: 200; font-size: 20px;">내가 작성한 음악 편지들</p>
+        </div>
+
+    </section>
+
+    <footer>
+
+        <div id="foot">
+            <h1>건의사항/문의하기</h1>
+            <hr> <br>
+            <details style="font-size: 22px;">
+                <summary>이메일 주소 확인</summary>
+                <a href="https://mail.google.com/mail/u/0/#inbox?compose=new"
+                    style="color: rgb(106, 57, 11);">findyourmusictaste2024@gmail.com</a>
+            </details>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
